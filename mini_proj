@@ -1,0 +1,70 @@
+import java.util.Scanner;
+class studentsreport
+{
+    public static void result(int marks[])
+    {
+        int j=0;
+        int sum=0;
+        for(j=0;j<8;j++)
+        {
+            sum=sum+marks[j];
+            j=j+1;
+        }
+        System.out.println("the total marks of student  is:"+sum);
+        int averagepercentage;
+        averagepercentage=sum/8;
+        System.out.println("average percentage of student is:"+averagepercentage);
+        switch(averagepercentage)
+        {
+          case 1: if(averagepercentage>90.0)
+                   {
+                    System.out.println("A+ grade ");
+                   }break;
+          case 2: if(averagepercentage>80.0)
+                   {
+                    System.out.println("A grade");
+                   } break;
+          case 3:   if(averagepercentage>70.0)
+                   {
+                    System.out.println("B+ grade");
+                   } break;  
+          case 4:   if(averagepercentage>60.0)
+                   {
+                    System.out.println("B grade");
+                   } break;
+          case 5:  if(averagepercentage>50.0)
+                   {
+                    System.out.println("C+ grade");
+                   } break;
+          case 6:  if(averagepercentage>40.0)
+                   {
+                    System.out.println("C grade");
+                   } break;
+          default :{
+                    System.out.println("failed");
+                    }
+                   break;
+        }
+
+    }
+  public static void main(String[]args)
+  {
+    System.out.println("enter the total no of students:");
+    Scanner sc= new Scanner(System.in);
+    int n=sc.nextInt();
+    for(int i=0;i<n;i++)
+    {
+        System.out.println("enter student marks");
+        int[] marks= new int[8];
+        marks[0]=sc.nextInt();
+        marks[1]=sc.nextInt();
+        marks[2]=sc.nextInt();
+        marks[3]=sc.nextInt();
+        marks[4]=sc.nextInt();
+        marks[5]=sc.nextInt();
+        marks[6]=sc.nextInt();
+        marks[7]=sc.nextInt();
+        result(marks);
+    }
+  }
+}
